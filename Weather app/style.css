@@ -1,0 +1,126 @@
+ * {
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif;
+ }
+
+ body {
+     background: linear-gradient(to top left, #e0ffd4, #75e2ff);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+
+ .weather {
+     color: #efefef;
+     background: linear-gradient(to bottom right, #a8e063, #00c6ff);
+     width: 400px;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+     border: none;
+     border-radius: 1rem;
+     padding: 1rem;
+ }
+
+ .result {
+     display: none;
+ }
+
+ .search {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 1.5rem 0 1.5rem 0;
+ }
+
+ .search input {
+     border: none;
+     outline: none;
+     border-radius: 1rem;
+     width: 60%;
+     padding: 1rem;
+     font-size: 1rem;
+ }
+
+ .search button {
+     background-color: #ffff;
+     padding: 0.7rem 1rem;
+     margin-left: 1rem;
+     border: none;
+     border-radius: 1.5rem;
+ }
+
+ .search img {
+     width: 20px;
+ }
+
+ .details {
+     text-align: center;
+ }
+
+ .details img {
+     max-width: 12rem;
+ }
+
+ .temp h1 {
+     font-size: 4rem;
+     font-weight: 400;
+ }
+
+ .temp h2 {
+     font-size: 2rem;
+     font-weight: 100;
+ }
+
+
+ .info {
+     margin: 2rem 1rem 1rem 1rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     text-align: center;
+ }
+
+ .humidity img,
+ .wind img {
+     max-width: 300px;
+     padding-bottom: 15px;
+ }
+
+ .humidity p,
+ .wind p,
+ .fahrenheit p {
+     font-size: 1rem;
+ }
+
+ .fahrenheit h1 {
+     font-size: 4rem;
+     font-weight: 100;
+     padding-bottom: 1rem;
+ }
+
+ @media (max-width: 425px) {
+     .info {
+         gap: 0.5rem;
+         /* reduce spacing between humidity, wind, fahrenheit */
+         padding: 0 0.5rem;
+     }
+
+     .humidity img,
+     .wind img {
+         max-width: 50px;
+         /* smaller icons */
+     }
+
+     .humidity p,
+     .wind p,
+     .fahrenheit p {
+         font-size: 0.8rem;
+         /* slightly smaller text */
+     }
+
+     .fahrenheit h1 {
+         font-size: 1.8rem;
+         /* smaller temperature display */
+     }
+ }
