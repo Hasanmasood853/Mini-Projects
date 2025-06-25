@@ -1,0 +1,177 @@
+ * {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     font-family: sans-serif;
+ }
+
+ .container {
+     width: 100%;
+     min-height: 100vh;
+     background: linear-gradient(135deg, #153677, #4e085f);
+     padding: 10px;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .todo-list {
+     width: 100%;
+     max-width: 400px;
+     background-color: #fff;
+     margin: 0 auto;
+     padding: 20px 35px;
+     border-radius: 20px;
+ }
+
+ .todo-list h2 {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 25px;
+ }
+
+ .todo-list h2 img {
+     width: 35px;
+     height: 35px;
+     margin-left: 10px;
+ }
+
+ .row {
+     margin: 20px 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: #edeef0;
+     border-radius: 20px;
+
+ }
+
+ .row input {
+     flex: 1;
+     border: none;
+     outline: none;
+     padding: 10px 15px;
+     border-radius: 20px;
+     background: transparent;
+     font-weight: 14px;
+
+ }
+
+ .row button {
+     border: none;
+     outline: none;
+     cursor: pointer;
+     border-radius: 20px;
+     background-color: red;
+     color: #fff;
+     padding: 16px 30px;
+     font-size: 14px;
+ }
+
+ .tasks ul li {
+     list-style: none;
+     padding: 12px 8px 12px 50px;
+     font-size: 17px;
+     user-select: none;
+     cursor: pointer;
+     position: relative;
+
+ }
+
+ .tasks ul li::before {
+     content: "";
+     position: absolute;
+     height: 27px;
+     width: 27px;
+     border-radius: 50%;
+     background-image: url(./images/unchecked.png);
+     background-size: cover;
+     background-position: center;
+     bottom: 8px;
+     left: 8px;
+
+ }
+
+ ul li.checked {
+     color: #555;
+     text-decoration: line-through;
+ }
+
+ ul li.checked::before {
+     background-image: url(./images/checked.png);
+ }
+
+ ul li span {
+     position: absolute;
+     right: 0;
+     top: 2px;
+     width: 40px;
+     height: 40px;
+     font-size: 22px;
+     color: #555;
+     line-height: 40px;
+     text-align: center;
+
+ }
+
+ ul li span:hover {
+     background: #edeef0;
+     border-radius: 50%;
+ }
+
+ @media (max-width: 425px) {
+     .todo-list {
+         margin: 100px 0;
+         padding: 15px 20px;
+     }
+
+     .todo-list h2 {
+         font-size: 20px;
+     }
+
+     .todo-list h2 img {
+         width: 28px;
+         height: 28px;
+         margin-left: 6px;
+     }
+
+     .row {
+         flex-direction: column;
+         gap: 10px;
+         padding: 10px;
+     }
+
+     .row input {
+         width: 100%;
+         font-size: 14px;
+         padding: 10px;
+     }
+
+     .row button {
+         width: 100%;
+         font-size: 14px;
+         padding: 12px;
+     }
+
+     .tasks ul li {
+         font-size: 15px;
+         padding: 12px 8px 12px 45px;
+     }
+
+     ul li span {
+         width: 32px;
+         height: 32px;
+         font-size: 18px;
+         line-height: 32px;
+         top: 5px;
+     }
+
+     .tasks ul li::before {
+         height: 24px;
+         width: 24px;
+         bottom: 10px;
+         left: 10px;
+     }
+ }
