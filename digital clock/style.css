@@ -1,0 +1,149 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(45deg, #00C9FF, #6A3093, #FF416C);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .clock {
+            width: 600px;
+            height: 200px;
+            padding: 30px 60px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            backdrop-filter: blur(40px);
+            z-index: 1;
+        }
+
+
+        .clock::before {
+            content: '';
+            width: 180px;
+            height: 180px;
+            border-radius: 5px;
+            background: #FF416C;
+            position: absolute;
+            bottom: 50px;
+            left: -70px;
+            z-index: -1;
+            filter: blur(50px);
+        }
+
+        .clock::after {
+            content: '';
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #00C9FF;
+            position: absolute;
+            right: -60px;
+            bottom: -50px;
+            z-index: -1;
+            filter: blur(50px);
+        }
+
+        .clock span {
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            font-size: 60px;
+        }
+
+        .clock span::after {
+            font-size: 18px;
+            display: block;
+        }
+
+        #hrs::after {
+            content: 'Hours';
+        }
+
+        #min::after {
+            content: 'MINS';
+        }
+
+        #sec::after {
+            content: 'SEC';
+        }
+
+        @media (max-width: 768px) {
+            .clock {
+                width: 90%;
+                height: 150px;
+                padding: 20px 30px;
+            }
+
+            .clock span {
+                font-size: 40px;
+                width: 70px;
+            }
+
+            .clock span::after {
+                font-size: 14px;
+            }
+
+            .clock::before,
+            .clock::after {
+                width: 120px;
+                height: 120px;
+                filter: blur(50px);
+            }
+
+            .clock::before {
+                bottom: 40px;
+                left: -40px;
+            }
+
+            .clock::after {
+                bottom: -40px;
+                right: -40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clock {
+                height: 120px;
+                padding: 15px 20px;
+            }
+
+            .clock span {
+                font-size: 30px;
+                width: 60px;
+            }
+
+            .clock span::after {
+                font-size: 12px;
+            }
+
+            .clock::before,
+            .clock::after {
+                width: 100px;
+                height: 100px;
+                filter: blur(30px);
+            }
+
+            .clock::before {
+                bottom: 30px;
+                left: -30px;
+            }
+
+            .clock::after {
+                bottom: -30px;
+                right: -30px;
+            }
+        }
