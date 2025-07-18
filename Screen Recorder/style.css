@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    margin: 50px 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    border: 2px solid #4f4f4f;
+    outline: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #454545;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+video {
+    width: 50%;
+}
