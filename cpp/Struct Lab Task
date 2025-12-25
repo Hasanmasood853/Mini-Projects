@@ -1,0 +1,343 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <fstream>
+using namespace std;
+// Task 1
+// struct student
+// {
+//     string name;
+//     int rollNo;
+//     float cgpa;
+// };
+
+// // Task 2
+// struct Book
+// {
+//     int id;
+//     string title, author;
+//     float price;
+// };
+// int binarySearch(Book arr[], int key, int size)
+// {
+//     int start = 0, end = size - 1;
+//     while (start <= end)
+//     {
+//         int mid = (start + end) / 2;
+//         if (arr[mid].id == key)
+//         {
+//             return mid;
+//         }
+//         else if (arr[mid].id < key)
+//         {
+//             end = mid - 1;
+//         }
+//         else
+//         {
+//             start = mid + 1;
+//         }
+//     }
+//     return -1;
+// }
+
+// // Task 3
+// struct Item
+// {
+//     string name;
+//     int quantity;
+//     float price;
+// };
+
+// // Task 4
+// struct Course
+// {
+//     string name;
+//     int grades[4];
+//     float average;
+// };
+
+// // Task 5
+// struct Date
+// {
+//     int year, month, day;
+// };
+// struct Event
+// {
+//     string title;
+//     Date date;
+//     int duration;
+// };
+// void addEvent(Event &calendar, int &num_events, string title, int y, int m, int d, int dur)
+// {
+
+//     calendar.title = title;
+//     calendar.date.year = y;
+//     calendar.date.month = m;
+//     calendar.date.day = d;
+//     calendar.duration = dur;
+// }
+// bool hasConflict(Event e1, Event e2)
+// {
+//     return (e1.date.year == e2.date.year &&
+//             e1.date.month == e2.date.month &&
+//             e1.date.day == e2.date.day);
+// }
+// void sortByDate(Event calendar[], int num_events)
+// {
+//     for (int i = 0; i < num_events - 1; i++)
+//     {
+//         for (int j = 0; j < num_events - i - 1; j++)
+//         {
+//             bool swapNeeded = false;
+//             if (calendar[j].date.year > calendar[j + 1].date.year)
+//             {
+//                 swapNeeded = true;
+//             }
+//             else if (calendar[j].date.year == calendar[j + 1].date.year)
+//             {
+//                 if (calendar[j].date.month > calendar[j + 1].date.month)
+//                 {
+//                     swapNeeded = true;
+//                 }
+//                 else if (calendar[j].date.month == calendar[j + 1].date.month)
+//                 {
+//                     if (calendar[j].date.day > calendar[j + 1].date.day)
+//                     {
+//                         swapNeeded = true;
+//                     }
+//                 }
+//             }
+//             if (swapNeeded)
+//             {
+//                 swap(calendar[j], calendar[j + 1]);
+//             }
+//         }
+//     }
+// };
+
+// Task 6
+// struct Course
+// {
+//     int ID;
+//     string title;
+//     int creditHrs;
+// };
+// struct Student
+// {
+//     Course course[5];
+//     int rollNo, totalCourse;
+//     string name;
+// };
+// void addStudent(Student &stu)
+// {
+//     cout << "---- Student Information ----\n";
+//     cout << "Enter Roll no: ";
+//     cin >> stu.rollNo;
+//     cout << "Enter Name: ";
+//     cin.ignore();
+//     getline(cin, stu.name);
+//     cout << "How many course to register? ";
+//     cin >> stu.totalCourse;
+// }
+// void registerCourse(Student &student, int courses)
+// {
+//     cout << endl;
+//     for (int i = 0; i < courses; i++)
+//     {
+//         cout << "Enter course " << i + 1 << " ID: ";
+//         cin >> student.course[i].ID;
+//         cin.ignore();
+//         cout << "Enter course title: ";
+//         getline(cin, student.course[i].title);
+//         cout << "Enter Credit Hours: ";
+//         cin >> student.course[i].creditHrs;
+//         cout << endl;
+//     }
+// }
+
+// void displayStudent(Student stu)
+// {
+//     ifstream inputFile("students.txt", ios::in);
+//     string line;
+//     if (inputFile.is_open())
+//     {
+//         while (getline(inputFile, line))
+//         {
+//             cout << line << endl;
+//         }
+//         inputFile.close();
+//     }
+//     else
+//     {
+//         cout << "File cannot opened" << endl;
+//     }
+// }
+int main()
+{
+    // Task 1
+    //  student stu[100];
+    //  int n;
+    //  cout << "Enter no of students: ";
+    //  cin >> n;
+    //  for (int i = 0; i < n; i++)
+    //  {
+    //      cout << "Enter student " << i + 1 << " name , rollNo and cgpa: ";
+    //      cin >> stu[i].name >> stu[i].rollNo >> stu[i].cgpa;
+    //      while (stu[i].cgpa < 2 || stu[i].cgpa > 4)
+    //      {
+    //          cout << "Invalid cgpa! Enter again: ";
+    //          cin >> stu[i].cgpa;
+    //      }
+    //  }
+
+    // int highCgpa = stu[0].cgpa, lowCgpa = stu[0].cgpa, highIdx = 0, lowIdx = 0;
+    // for (int i = 1; i < n; i++)
+    // {
+
+    //     if (stu[i].cgpa > highCgpa)
+    //     {
+    //         highCgpa = stu[i].cgpa;
+    //         highIdx = i;
+    //     }
+    //     if (stu[i].cgpa < lowCgpa)
+    //     {
+    //         lowCgpa = stu[i].cgpa;
+    //         lowIdx = i;
+    //     }
+    // }
+    // cout << "Student with highest cgpa is " << stu[highIdx].name
+    //      << " (Roll No: " << stu[highIdx].rollNo << ") with cgpa " << stu[highIdx].cgpa << endl;
+
+    // cout << "Student with lowest cgpa is " << stu[lowIdx].name
+    //      << " (Roll No: " << stu[lowIdx].rollNo << ") with cgpa " << stu[lowIdx].cgpa << endl;
+
+    // Task 2 Library book management
+    // Book B[5];
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     cout << "Book " << i + 1 << endl;
+
+    //     cout << "Enter ID: ";
+    //     cin >> B[i].id;
+    //     cin.ignore();
+    //     cout << "Enter Title: ";
+    //     getline(cin, B[i].title);
+    //     cout << "Enter Author: ";
+    //     getline(cin, B[i].author);
+    //     cout << "Enter Price: ";
+    //     cin >> B[i].price;
+    // }
+    // int searchID;
+    // cout << "Enter id to search for book details: ";
+    // cin >> searchID;
+    // int result = binarySearch(B, searchID, 5);
+    // cout << "Book found number is: " << result + 1 << endl;
+    // cout << "\nBooks with price > 1000 are:\n";
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     if (B[i].price > 1000)
+    //     {
+    //         cout << "Book details: " << endl
+    //              << "\tID: " << B[i].id << "\n\tAuthor: " << B[i].author << "\n\tTitle: " << B[i].title << "\n\tPrice: " << B[i].price << endl;
+    //     }
+    // }
+
+    // Task 3 structure for inventory item
+    // Item sweet;
+    // cout << "Enter name: ";
+    // cin >> sweet.name;
+    // cout << "Enter quantity: ";
+    // cin >> sweet.quantity;
+    // while (sweet.quantity < 0)
+    // {
+    //     cout << "Invalid! Enter +ve quantity: ";
+    //     cin >> sweet.quantity;
+    // }
+    // cout << "Enter price: ";
+    // cin >> sweet.price;
+    // while (sweet.price < 0)
+    // {
+    //     cout << "Invalid! Enter +ve quantity: ";
+    //     cin >> sweet.price;
+    // }
+    // cout << "Item: " << sweet.name << " | Quantity: " << sweet.quantity << " | Price: " << sweet.price << endl;
+
+    // Task 4 Struct with array for exam grades
+    // Course subject;
+    // cout << "Enter course: ";
+    // getline(cin, subject.name);
+    // float totalGrade = 0;
+    // cout << "Enter grades: ";
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     cin >> subject.grades[i];
+    //     while (subject.grades[i] < 0 || subject.grades[i] > 100)
+    //     {
+    //         cout << "Invalid! Enter grades (0-100): ";
+    //         cin >> subject.grades[i];
+    //     }
+    //     totalGrade += subject.grades[i];
+    // }
+    // subject.average = totalGrade / 4;
+    // cout << "Course: " << subject.name << " |  Grades: ";
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     cout << subject.grades[i] << " ";
+    // }
+    // cout << "|  Average: " << subject.average;
+
+    // Task 5 Event Scheduling Calendar
+    // Event calender[100];
+    // int eventNo = 5;
+    // addEvent(calender[0], eventNo, "Meeting", 2025, 12, 22, 60);
+    // addEvent(calender[1], eventNo, "Lunch", 2025, 12, 22, 30);
+    // addEvent(calender[2], eventNo, "Conference", 2026, 1, 5, 120);
+    // addEvent(calender[3], eventNo, "Workout", 2025, 11, 15, 45);
+    // addEvent(calender[4], eventNo, "Doctor", 2025, 12, 25, 30);
+    // cout << "\nChecking conflicts: " << endl;
+    // for (int i = 0; i < eventNo - 1; i++)
+    // {
+    //     for (int j = i + 1; j < eventNo; j++)
+    //     {
+    //         if (hasConflict(calender[i], calender[j]))
+    //         {
+    //             cout << "Conflict between " << calender[i].title << " and " << calender[j].title << " on " << calender[i].date.year
+    //                  << "-" << calender[i].date.month << "-" << calender[i].date.day << endl;
+    //         }
+    //     }
+    // }
+
+    // sortByDate(calender, eventNo);
+    // cout << "\nSorted calendar: " << endl;
+    // for (int i = 0; i < eventNo; i++)
+    // {
+    //     cout << "Event: " << calender[i].title << " | Date: " << calender[i].date.year << "-" << calender[i].date.month << "-" << calender[i].date.day
+    //          << " | Duration: " << calender[i].duration << " mins\n";
+    // }
+
+    // Task 6
+    // Student stu1;
+    // addStudent(stu1);
+    // registerCourse(stu1, stu1.totalCourse);
+    // ofstream outputFile("students.txt", ios::out);
+    // if (outputFile.is_open())
+    // {
+    //     outputFile << "--- Student Information ---" << endl
+    //                << "Roll No: " << stu1.rollNo << endl
+    //                << "Name: " << stu1.name << endl
+    //                << "Total Courses: " << stu1.totalCourse << endl;
+    //     for (int i = 0; i < stu1.totalCourse; i++)
+    //     {
+    //         outputFile << "Course " << i + 1 << " : " << stu1.course[i].title << " (" << stu1.course[i].creditHrs << " credit hours)" << endl;
+    //     }
+    //     outputFile.close();
+    //     cout << "Record Saved successfully!" << endl;
+    // }
+    // else
+    // {
+    //     cout << "File cannot opened" << endl;
+    // }
+    // displayStudent(stu1);
+
+    return 0;
+}
